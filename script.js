@@ -20,12 +20,12 @@ function getRoundResults(userOption) {
 
   if (hasPlayerWonTheRound(userOption, computerResult)) {
     playerScore++;
-    return `Player wins! ${userOption} beats ${computerResult}`;
+    return `¡Gana Jugador! ${userOption} beats ${computerResult}`;
   } else if (computerResult === userOption) {
-    return `It's a tie! Both chose ${userOption}`;
+    return `Empate! Ambos eligieron: ${userOption}`;
   } else {
     computerScore++;
-    return `Computer wins! ${computerResult} beats ${userOption}`;
+    return `¡Gana Computadora! ${computerResult} beats ${userOption}`;
   }
 }
 
@@ -43,8 +43,8 @@ function showResults(userOption) {
 
   if (playerScore === 3 || computerScore === 3) {
     winnerMsgElement.innerText = `${
-      playerScore === 3 ? "Player" : "Computer"
-    } has won the game!`;
+      playerScore === 3 ? "¡Jugador" : "¡Computadora"
+    } ganó el juego!`;
 
     resetGameBtn.style.display = "block";
     optionsContainer.style.display = "none";
@@ -69,13 +69,13 @@ const paperBtn = document.getElementById("paper-btn");
 const scissorsBtn = document.getElementById("scissors-btn");
 
 rockBtn.addEventListener("click", function () {
-  showResults("Rock");
+  showResults("Piedra");
 });
 
 paperBtn.addEventListener("click", function () {
-  showResults("Paper");
+  showResults("Papel");
 });
 
 scissorsBtn.addEventListener("click", function () {
-  showResults("Scissors");
+  showResults("Tijeras");
 });
