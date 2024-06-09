@@ -1,14 +1,14 @@
 function getRandomComputerResult() {
-  const options = ["Rock", "Paper", "Scissors"];
+  const options = ["Piedra", "Papel", "Tijeras"];
   const randomIndex = Math.floor(Math.random() * options.length);
   return options[randomIndex];
 }
 
 function hasPlayerWonTheRound(player, computer) {
   return (
-    (player === "Rock" && computer === "Scissors") ||
-    (player === "Scissors" && computer === "Paper") ||
-    (player === "Paper" && computer === "Rock")
+    (player === "Piedra" && computer === "Tijeras") ||
+    (player === "Tijeras" && computer === "Papel") ||
+    (player === "Papel" && computer === "Piedra")
   );
 }
 
@@ -20,12 +20,12 @@ function getRoundResults(userOption) {
 
   if (hasPlayerWonTheRound(userOption, computerResult)) {
     playerScore++;
-    return `¡Gana Jugador! ${userOption} beats ${computerResult}`;
+    return `¡Gana Jugador! ${userOption} vence ${computerResult}`;
   } else if (computerResult === userOption) {
     return `Empate! Ambos eligieron: ${userOption}`;
   } else {
     computerScore++;
-    return `¡Gana Computadora! ${computerResult} beats ${userOption}`;
+    return `¡Gana Computadora! ${computerResult} vence ${userOption}`;
   }
 }
 
